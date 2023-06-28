@@ -16,6 +16,7 @@ namespace BookApi2.Repositories
         {
             _context.Books.Add(book);
             await _context.SaveChangesAsync();
+
             return book;
         }
 
@@ -24,7 +25,6 @@ namespace BookApi2.Repositories
             var bookToDelete = await _context.Books.FindAsync(id);
             _context.Books.Remove(bookToDelete);
             await _context.SaveChangesAsync();
-
         }
 
         public async Task<IEnumerable<Book>> Get()
@@ -37,7 +37,7 @@ namespace BookApi2.Repositories
              return await _context.Books.FindAsync(id);
         }
 
-        public async Task update(Book book)
+        public async Task Update(Book book)
         {
              _context.Entry(book).State = EntityState.Modified;
             await _context.SaveChangesAsync();

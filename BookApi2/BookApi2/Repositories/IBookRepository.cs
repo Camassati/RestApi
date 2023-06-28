@@ -13,7 +13,7 @@ namespace BookApi2.Repositories
 
         Task<Book> Create(Book book);
 
-        Task update (Book book);
+        Task Update (Book book);
 
         Task Delete(int id);  
     }
